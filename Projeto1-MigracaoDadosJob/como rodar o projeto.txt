@@ -1,0 +1,28 @@
+Primeiramente, abra o postgres local.
+
+E crie um novo banco de dados, chamado migracao_dados:
+create database migracao_dados;
+
+Depois crie as duas tabelas: dados_bancarios e pessoas
+
+DROP TABLE IF EXISTS pessoa;
+CREATE TABLE pessoa(
+	id INT,
+	nome VARCHAR(500),
+	email VARCHAR(500),
+	data_nascimento DATE,
+	idade INT,
+	PRIMARY KEY(id)
+);
+
+DROP TABLE IF EXISTS dados_bancarios;
+CREATE TABLE dados_bancarios(
+	id INT,
+	pessoa_id INT,
+	agencia INT,
+	conta INT,
+	banco INT ,
+	PRIMARY KEY(id)
+);
+
+Em seguida execute o arquivo Projeto1MigracaoDadosJobApplication.java
