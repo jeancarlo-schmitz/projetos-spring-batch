@@ -26,7 +26,6 @@ public class MigracaoDadosJobConfig {
 		return jobBuilderFactory
 				.get("migracaoDadosJob")
 				.start(stepsParalelos(migrarPessoaStep, migrarDadosBancariosStep))
-				.next(migrarDadosBancariosStep)
 				.end()
 				.incrementer(new RunIdIncrementer())
 				.build();
